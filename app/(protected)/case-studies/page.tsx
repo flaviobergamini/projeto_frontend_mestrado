@@ -61,7 +61,7 @@ export default function EstudosCasoPage() {
     <PageContainer title="Cadastro de Estudo de Caso" maxWidth="md">
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={8}>
+          <Grid size={{ xs: 12, sm: 8 }}>
             <FormInput
               label="Nome do Aluno"
               value={formData.nomeAluno}
@@ -70,7 +70,7 @@ export default function EstudosCasoPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={4}>
+          <Grid size={{ xs: 12, sm: 4 }}>
             <FormInput
               label="Idade"
               type="number"
@@ -80,7 +80,7 @@ export default function EstudosCasoPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Data da Avaliação"
               type="date"
@@ -91,7 +91,7 @@ export default function EstudosCasoPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Nível do Autismo"
               select
@@ -104,7 +104,7 @@ export default function EstudosCasoPage() {
             </FormInput>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Diagnóstico"
               multiline
@@ -114,7 +114,7 @@ export default function EstudosCasoPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Comportamentos Observados"
               multiline
@@ -125,7 +125,7 @@ export default function EstudosCasoPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Habilidades e Pontos Fortes"
               multiline
@@ -136,7 +136,7 @@ export default function EstudosCasoPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Necessidades Especiais"
               multiline
@@ -147,7 +147,7 @@ export default function EstudosCasoPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Estratégias Recomendadas"
               multiline
@@ -158,7 +158,7 @@ export default function EstudosCasoPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Observações Adicionais"
               multiline

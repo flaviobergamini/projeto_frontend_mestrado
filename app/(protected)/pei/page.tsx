@@ -86,13 +86,13 @@ export default function PEIPage() {
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           {/* Identificação */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h6" sx={{ mb: 2 }}>
               Identificação
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Nome do Aluno"
               value={formData.nomeAluno}
@@ -101,7 +101,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Responsável pelo PEI"
               value={formData.responsavel}
@@ -110,7 +110,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Data de Elaboração"
               type="date"
@@ -121,7 +121,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Período de Vigência"
               select
@@ -135,14 +135,14 @@ export default function PEIPage() {
           </Grid>
 
           {/* Objetivos */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Divider sx={{ my: 2 }} />
             <Typography variant="h6" sx={{ mb: 2 }}>
               Objetivos
             </Typography>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Objetivo Geral"
               multiline
@@ -153,7 +153,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Objetivos Específicos"
               multiline
@@ -165,14 +165,14 @@ export default function PEIPage() {
           </Grid>
 
           {/* Áreas de Desenvolvimento */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Divider sx={{ my: 2 }} />
             <Typography variant="h6" sx={{ mb: 2 }}>
               Áreas de Desenvolvimento
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Comunicação"
               multiline
@@ -183,7 +183,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Interação Social"
               multiline
@@ -194,7 +194,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Comportamento"
               multiline
@@ -205,7 +205,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Autonomia"
               multiline
@@ -216,7 +216,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Desenvolvimento Cognitivo"
               multiline
@@ -227,7 +227,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Desenvolvimento Motor"
               multiline
@@ -239,14 +239,14 @@ export default function PEIPage() {
           </Grid>
 
           {/* Estratégias e Recursos */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Divider sx={{ my: 2 }} />
             <Typography variant="h6" sx={{ mb: 2 }}>
               Estratégias e Recursos
             </Typography>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Estratégias Pedagógicas"
               multiline
@@ -257,7 +257,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Recursos Materiais e Adaptações"
               multiline
@@ -268,7 +268,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Apoio Necessário"
               multiline
@@ -280,14 +280,14 @@ export default function PEIPage() {
           </Grid>
 
           {/* Avaliação */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Divider sx={{ my: 2 }} />
             <Typography variant="h6" sx={{ mb: 2 }}>
               Avaliação
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Critérios de Avaliação"
               multiline
@@ -298,7 +298,7 @@ export default function PEIPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Frequência de Avaliação"
               select
@@ -312,7 +312,7 @@ export default function PEIPage() {
             </FormInput>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Observações Gerais"
               multiline

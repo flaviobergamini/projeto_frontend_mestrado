@@ -64,7 +64,7 @@ export default function MenuPage() {
         {menuItems.map((item) => {
           const Icon = item.icon;
           return (
-            <Grid item xs={12} sm={6} md={6} key={item.title}>
+            <Grid size={{ xs: 12, sm: 6, md: 6 }} key={item.title}>
               <Card
                 sx={{
                   height: '100%',

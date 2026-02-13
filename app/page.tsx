@@ -111,7 +111,7 @@ export default function Home() {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <Grid item xs={12} sm={6} md={3} key={index}>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
                 <Card
                   sx={{
                     height: '100%',

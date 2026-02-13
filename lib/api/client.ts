@@ -103,9 +103,9 @@ export async function apiClient<T = any>(
 
   const url = `${API_URL}${endpoint}`;
 
-  const headers: HeadersInit = {
+  const headers: Record<string, string> = {
     'Content-Type': 'application/json',
-    ...fetchOptions.headers,
+    ...(fetchOptions.headers as Record<string, string>),
   };
 
   // Adicionar token de autenticação se necessário

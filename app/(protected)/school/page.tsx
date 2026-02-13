@@ -66,7 +66,7 @@ export default function EscolasPage() {
     <PageContainer title="Cadastro de Escola" maxWidth="md">
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={8}>
+          <Grid size={{ xs: 12, sm: 8 }}>
             <FormInput
               label="Nome da Escola"
               value={formData.nomeEscola}
@@ -75,7 +75,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={4}>
+          <Grid size={{ xs: 12, sm: 4 }}>
             <FormInput
               label="Tipo de Escola"
               select
@@ -88,7 +88,7 @@ export default function EscolasPage() {
             </FormInput>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Endereço"
               value={formData.endereco}
@@ -96,7 +96,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Cidade"
               value={formData.cidade}
@@ -105,7 +105,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={3}>
+          <Grid size={{ xs: 12, sm: 3 }}>
             <FormInput
               label="Estado"
               value={formData.estado}
@@ -115,7 +115,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={3}>
+          <Grid size={{ xs: 12, sm: 3 }}>
             <FormInput
               label="CEP"
               value={formData.cep}
@@ -124,7 +124,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Telefone"
               value={formData.telefone}
@@ -133,7 +133,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Email"
               type="email"
@@ -142,7 +142,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Diretor(a)"
               value={formData.diretor}
@@ -150,7 +150,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Coordenador(a) Pedagógico(a)"
               value={formData.coordenadorPedagogico}
@@ -158,7 +158,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Número de Alunos"
               type="number"
@@ -167,7 +167,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Professores de Apoio"
               type="number"
@@ -176,7 +176,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Infraestrutura"
               multiline
@@ -187,7 +187,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Recursos Disponíveis"
               multiline
@@ -198,7 +198,7 @@ export default function EscolasPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <FormInput
               label="Observações"
               multiline

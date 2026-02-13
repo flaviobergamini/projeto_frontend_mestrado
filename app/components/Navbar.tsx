@@ -34,7 +34,7 @@ export default function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ borderRadius: 0 }}>
       <Toolbar>
         <Typography
           variant="h6"

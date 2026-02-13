@@ -14,7 +14,7 @@ import {
 import FormInput from '@/app/components/FormInput';
 import PageContainer from '@/app/components/PageContainer';
 
-export default function DiarioPage() {
+export default function DiaryPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     nomeAluno: '',
@@ -87,13 +87,13 @@ export default function DiarioPage() {
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           {/* Identificação */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h6" sx={{ mb: 2 }}>
               Identificação
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={4}>
+          <Grid size={{ xs: 12, sm: 4 }}>
             <FormInput
               label="Nome do Aluno"
               value={formData.nomeAluno}
@@ -102,7 +102,7 @@ export default function DiarioPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={4}>
+          <Grid size={{ xs: 12, sm: 4 }}>
             <FormInput
               label="Data"
               type="date"
@@ -113,7 +113,7 @@ export default function DiarioPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={4}>
+          <Grid size={{ xs: 12, sm: 4 }}>
             <FormInput
               label="Turno"
               select
@@ -126,7 +126,7 @@ export default function DiarioPage() {
             </FormInput>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Professor Responsável"
               value={formData.professor}
@@ -136,13 +136,13 @@ export default function DiarioPage() {
           </Grid>
 
           {/* Registro do Dia */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h6" sx={{ mt: 2, mb: 2 }}>
               Registro do Dia
             </Typography>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Atividades Realizadas"
               multiline
@@ -153,7 +153,7 @@ export default function DiarioPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Nível de Participação"
               select
@@ -168,7 +168,7 @@ export default function DiarioPage() {
             </FormInput>
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Humor/Estado Emocional"
               select
@@ -184,13 +184,13 @@ export default function DiarioPage() {
           </Grid>
 
           {/* Comportamento */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h6" sx={{ mt: 2, mb: 2 }}>
               Comportamento e Interação
             </Typography>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Comportamento Geral"
               multiline
@@ -201,7 +201,7 @@ export default function DiarioPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Interações Sociais"
               multiline
@@ -212,7 +212,7 @@ export default function DiarioPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Desafios Enfrentados"
               multiline
@@ -224,13 +224,13 @@ export default function DiarioPage() {
           </Grid>
 
           {/* Aprendizagem */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h6" sx={{ mt: 2, mb: 2 }}>
               Aprendizagem
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Progressos Observados"
               multiline
@@ -241,7 +241,7 @@ export default function DiarioPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Dificuldades Identificadas"
               multiline
@@ -252,7 +252,7 @@ export default function DiarioPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Estratégias Utilizadas"
               multiline
@@ -264,13 +264,13 @@ export default function DiarioPage() {
           </Grid>
 
           {/* Comunicação */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h6" sx={{ mt: 2, mb: 2 }}>
               Comunicação
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Formas de Comunicação"
               multiline
@@ -281,7 +281,7 @@ export default function DiarioPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <FormInput
               label="Efetividade da Comunicação"
               select
@@ -296,13 +296,13 @@ export default function DiarioPage() {
           </Grid>
 
           {/* Necessidades */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h6" sx={{ mt: 2, mb: 2 }}>
               Necessidades e Encaminhamentos
             </Typography>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Necessidades Identificadas"
               multiline
@@ -313,7 +313,7 @@ export default function DiarioPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Ações Futuras"
               multiline
@@ -324,7 +324,7 @@ export default function DiarioPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormInput
               label="Observações Gerais"
               multiline
