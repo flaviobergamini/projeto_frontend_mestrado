@@ -3,7 +3,7 @@
  * Gerencia automaticamente tokens de acesso e refresh
  */
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+const API_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3001';
 
 interface RequestOptions extends RequestInit {
   requiresAuth?: boolean;

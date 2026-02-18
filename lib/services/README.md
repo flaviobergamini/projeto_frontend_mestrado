@@ -9,7 +9,7 @@ Este diretório contém todos os serviços para integração com a API REST do p
 Crie um arquivo `.env.local` na raiz do projeto com a URL da API:
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:3001
+NEXT_PUBLIC_BASE_URL=http://localhost:3001
 ```
 
 ### 2. Autenticação
