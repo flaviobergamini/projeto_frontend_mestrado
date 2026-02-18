@@ -31,15 +31,15 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-          mv ./build/static ./build/standalone/build
-          mv ./public ./build/standalone
+          cp -r ./build/static ./build/standalone/build/static
+          cp -r ./public ./build/standalone/public
+          cp web.config ./build/standalone/
+          cp startup.sh ./build/standalone/
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          app-name: ${{ env.WEBAPP_NAME }}
-          publish-profile: ${{ env.APPLICATION_PUBLISH_PROFILE }}
           path: ./build/standalone
 
   deploy:
@@ -58,6 +58,5 @@ jobs:
         with:
           app-name: 'frontendmestrado'
           slot-name: 'Production'
-          package: ./build/standalone
-
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DEF88A1B97754BA8A83E388DFFA572BF }}
