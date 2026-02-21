@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server';
 const authRoutes = ['/login', '/cadastro'];
 
 // Rotas que requerem autenticação
-const protectedRoutes = ['/menu', '/pei', '/escola', '/estudo-caso', '/diario'];
+const protectedRoutes = ['/menu', '/pei', '/escolas', '/estudos-caso', '/diario'];
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;

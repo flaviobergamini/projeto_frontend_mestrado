@@ -1,36 +1,45 @@
 import { api } from '../api/client';
 
-export interface CreateInstitutionRequest {
-  name: string;
-  type: string;
-  address?: string;
-  city?: string;
-  state?: string;
-  zipCode?: string;
-  phone?: string;
-  email?: string;
-  [key: string]: any;
+export interface Question {
+  key: string;
+  question: string;
+  type: 'text' | 'boolean';
 }
 
-export interface Institution {
-  id: string;
-  name: string;
-  type: string;
-  address?: string;
-  city?: string;
-  state?: string;
-  zipCode?: string;
-  phone?: string;
-  email?: string;
-  createdAt: string;
-  updatedAt: string;
+export interface Section {
+  section_name: string;
+  questions: Question[];
+}
+
+export interface QuestionsResponse {
+  sections: Section[];
 }
 
 export const institutionService = {
-  /**
-   * Cria uma nova instituição/escola
-   */
-  async create(data: CreateInstitutionRequest): Promise<Institution> {
-    return api.post<Institution>('/instituition/create', data);
+  async getQuestions(): Promise<QuestionsResponse> {
+    return api.get<QuestionsResponse>('/institution/questions');
+  },
+
+  async createInstitution(
+    beneficiaryId: number,
+    sections: Section[],
+    answers: Record<string, string | boolean>
+  ) {
+    const sectionsWithAnswers = sections.map((section) => ({
+      section_name: section.section_name,
+      questions: section.questions.map((q) => ({
+        key: q.key,
+        question: q.question,
+        type: q.type,
+        answer: answers[q.key] ?? (q.type === 'boolean' ? false : 'Não informado'),
+      })),
+    }));
+
+    return api.post('/institution/create', {
+      beneficiary_id: beneficiaryId,
+      custom_questions: {
+        institution: { sections: sectionsWithAnswers },
+      },
+    });
   },
 };

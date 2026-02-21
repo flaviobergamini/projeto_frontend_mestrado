@@ -1,34 +1,45 @@
 import { api } from '../api/client';
 
-export interface CreateCaseStudyRequest {
-  studentName: string;
-  studentAge: number;
-  institutionId: string;
-  diagnosis?: string;
-  observations?: string;
-  strengths?: string[];
-  challenges?: string[];
-  [key: string]: any;
+export interface Question {
+  key: string;
+  question: string;
+  type: 'text' | 'boolean';
 }
 
-export interface CaseStudy {
-  id: string;
-  studentName: string;
-  studentAge: number;
-  institutionId: string;
-  diagnosis?: string;
-  observations?: string;
-  strengths?: string[];
-  challenges?: string[];
-  createdAt: string;
-  updatedAt: string;
+export interface Section {
+  section_name: string;
+  questions: Question[];
+}
+
+export interface QuestionsResponse {
+  sections: Section[];
 }
 
 export const caseStudyService = {
-  /**
-   * Cria um novo estudo de caso
-   */
-  async create(data: CreateCaseStudyRequest): Promise<CaseStudy> {
-    return api.post<CaseStudy>('/case-study/create', data);
+  async getQuestions(): Promise<QuestionsResponse> {
+    return api.get<QuestionsResponse>('/case-study/questions', { requiresAuth: false });
+  },
+
+  async createCaseStudy(
+    beneficiaryId: number,
+    sections: Section[],
+    answers: Record<string, string | boolean>
+  ) {
+    const custom_questions = {
+      sections: sections.map((section) => ({
+        section_name: section.section_name,
+        questions: section.questions.map((q) => ({
+          key: q.key,
+          question: q.question,
+          type: q.type,
+          answer: answers[q.key] ?? (q.type === 'boolean' ? false : 'Não respondido'),
+        })),
+      })),
+    };
+
+    return api.post('/case-study/create', {
+      beneficiary_id: beneficiaryId,
+      custom_questions,
+    });
   },
 };
