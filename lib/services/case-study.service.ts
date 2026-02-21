@@ -1,28 +1,28 @@
 import { api } from '../api/client';
 
-export interface Question {
+export interface CaseStudyQuestion {
   key: string;
   question: string;
   type: 'text' | 'boolean';
 }
 
-export interface Section {
+export interface CaseStudySection {
   section_name: string;
-  questions: Question[];
+  questions: CaseStudyQuestion[];
 }
 
-export interface QuestionsResponse {
-  sections: Section[];
+export interface CaseStudyQuestionsResponse {
+  sections: CaseStudySection[];
 }
 
 export const caseStudyService = {
-  async getQuestions(): Promise<QuestionsResponse> {
-    return api.get<QuestionsResponse>('/case-study/questions', { requiresAuth: false });
+  async getQuestions(): Promise<CaseStudyQuestionsResponse> {
+    return api.get<CaseStudyQuestionsResponse>('/case-study/questions', { requiresAuth: false });
   },
 
   async createCaseStudy(
     beneficiaryId: number,
-    sections: Section[],
+    sections: CaseStudySection[],
     answers: Record<string, string | boolean>
   ) {
     const custom_questions = {

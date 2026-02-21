@@ -28,9 +28,8 @@ export interface ErrorResponse {
 export type {
   LoginRequest,
   RegisterRequest,
-  AuthResponse,
-  RefreshTokenRequest,
-  RefreshTokenResponse,
+  LoginResponse,
+  RegisterResponse,
 } from '../services/auth.service';
 
 export type {
@@ -41,13 +40,15 @@ export type {
 } from '../services/pei.service';
 
 export type {
-  CreateInstitutionRequest,
-  Institution,
+  InstitutionQuestion,
+  InstitutionSection,
+  InstitutionQuestionsResponse,
 } from '../services/institution.service';
 
 export type {
-  CreateCaseStudyRequest,
-  CaseStudy,
+  CaseStudyQuestion,
+  CaseStudySection,
+  CaseStudyQuestionsResponse,
 } from '../services/case-study.service';
 
 export type {

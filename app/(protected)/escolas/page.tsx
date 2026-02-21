@@ -18,13 +18,13 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PageContainer from '@/app/components/PageContainer';
-import { institutionService, Section } from '@/lib/services/institution.service';
+import { institutionService, InstitutionSection } from '@/lib/services/institution.service';
 import { ApiError } from '@/lib/api/client';
 
 export default function EscolasPage() {
   const router = useRouter();
 
-  const [sections, setSections] = useState<Section[]>([]);
+  const [sections, setSections] = useState<InstitutionSection[]>([]);
   const [answers, setAnswers] = useState<Record<string, string | boolean>>({});
   const [beneficiaryId, setBeneficiaryId] = useState('');
   const [loading, setLoading] = useState(true);

@@ -18,13 +18,13 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PageContainer from '@/app/components/PageContainer';
-import { caseStudyService, Section } from '@/lib/services/case-study.service';
+import { caseStudyService, CaseStudySection } from '@/lib/services/case-study.service';
 import { ApiError } from '@/lib/api/client';
 
 export default function EstudosCasoPage() {
   const router = useRouter();
 
-  const [sections, setSections] = useState<Section[]>([]);
+  const [sections, setSections] = useState<CaseStudySection[]>([]);
   const [answers, setAnswers] = useState<Record<string, string | boolean>>({});
   const [beneficiaryId, setBeneficiaryId] = useState('');
   const [loading, setLoading] = useState(true);

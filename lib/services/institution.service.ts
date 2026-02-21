@@ -1,28 +1,28 @@
 import { api } from '../api/client';
 
-export interface Question {
+export interface InstitutionQuestion {
   key: string;
   question: string;
   type: 'text' | 'boolean';
 }
 
-export interface Section {
+export interface InstitutionSection {
   section_name: string;
-  questions: Question[];
+  questions: InstitutionQuestion[];
 }
 
-export interface QuestionsResponse {
-  sections: Section[];
+export interface InstitutionQuestionsResponse {
+  sections: InstitutionSection[];
 }
 
 export const institutionService = {
-  async getQuestions(): Promise<QuestionsResponse> {
-    return api.get<QuestionsResponse>('/institution/questions');
+  async getQuestions(): Promise<InstitutionQuestionsResponse> {
+    return api.get<InstitutionQuestionsResponse>('/institution/questions');
   },
 
   async createInstitution(
     beneficiaryId: number,
-    sections: Section[],
+    sections: InstitutionSection[],
     answers: Record<string, string | boolean>
   ) {
     const sectionsWithAnswers = sections.map((section) => ({
