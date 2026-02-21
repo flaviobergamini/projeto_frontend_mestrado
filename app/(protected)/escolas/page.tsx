@@ -141,7 +141,7 @@ export default function EscolasPage() {
 
         {/* Seções de perguntas */}
         {sections.map((section, idx) => (
-          <Accordion key={idx} defaultExpanded={idx === 0} sx={{ mb: 1 }}>
+          <Accordion key={idx} sx={{ mb: 1 }}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography fontWeight={600}>{section.section_name}</Typography>
             </AccordionSummary>
