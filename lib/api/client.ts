@@ -3,7 +3,7 @@
  * Gerencia automaticamente tokens de acesso e refresh
  */
 
-const API_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3001';
+const API_URL = process.env.NEXT_PUBLIC_API_PREFIX || '/api';
 
 interface RequestOptions extends RequestInit {
   requiresAuth?: boolean;
@@ -32,6 +32,7 @@ export const tokenManager = {
   setAccessToken: (token: string): void => {
     if (typeof window === 'undefined') return;
     localStorage.setItem('access_token', token);
+    document.cookie = `access_token=${token}; path=/; SameSite=Lax`;
   },
 
   getRefreshToken: (): string | null => {
@@ -49,6 +50,7 @@ export const tokenManager = {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
     localStorage.removeItem('user');
+    document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
   },
 
   setTokens: (accessToken: string, refreshToken?: string): void => {
@@ -83,9 +85,9 @@ async function refreshAccessToken(): Promise<string | null> {
     }
 
     const data = await response.json();
-    tokenManager.setAccessToken(data.accessToken);
+    tokenManager.setAccessToken(data.access_token);
 
-    return data.accessToken;
+    return data.access_token;
   } catch (error) {
     tokenManager.clearTokens();
     return null;

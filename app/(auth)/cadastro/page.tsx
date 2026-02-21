@@ -42,7 +42,7 @@ export default function CadastroPage() {
     const result = await register(name, email, password);
 
     if (result.success) {
-      router.push('/menu');
+      router.push('/login');
     } else {
       setError(result.error || 'Erro ao cadastrar usuário');
     }

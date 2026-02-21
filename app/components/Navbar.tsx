@@ -12,6 +12,7 @@ import {
 } from '@mui/material';
 import { AccountCircle, Extension } from '@mui/icons-material';
 import { useAuth } from '../context/AuthContext';
+import { authService } from '@/lib/services/auth.service';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -43,46 +44,47 @@ export default function Navbar() {
       }}
     >
       <Toolbar sx={{ py: { xs: 0.5, md: 0.75 }, minHeight: { xs: 56, md: 64 } }}>
-        <Extension
-          sx={{
-            mr: 1.5,
-            fontSize: { xs: 22, md: 28 },
-            opacity: 0.92,
-            flexShrink: 0,
-          }}
-        />
-
         <Box
-          sx={{ flexGrow: 1, cursor: 'pointer', overflow: 'hidden' }}
-          onClick={() => router.push(isAuthenticated ? '/menu' : '/')}
+          sx={{ flexGrow: 1, cursor: 'pointer', overflow: 'hidden', display: 'flex', alignItems: 'center' }}
+          onClick={() => router.push('/')}
         >
-          <Typography
-            variant="h6"
-            component="div"
-            noWrap
+          <Extension
             sx={{
-              fontWeight: 700,
-              letterSpacing: 0.3,
-              lineHeight: 1.2,
-              fontSize: { sm: '1rem', md: '1.2rem' },
-              display: { xs: 'none', sm: 'block' },
+              mr: 1.5,
+              fontSize: { xs: 22, md: 28 },
+              opacity: 0.92,
+              flexShrink: 0,
             }}
-          >
-            Sistema de Apoio — Educação Inclusiva
-          </Typography>
-          <Typography
-            variant="caption"
-            component="div"
-            sx={{
-              opacity: 0.72,
-              letterSpacing: 1.2,
-              textTransform: 'uppercase',
-              fontSize: '0.58rem',
-              display: { xs: 'none', sm: 'block' },
-            }}
-          >
-            Apoio ao Desenvolvimento de Crianças Autistas
-          </Typography>
+          />
+          <Box sx={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+            <Typography
+              variant="h6"
+              component="div"
+              noWrap
+              sx={{
+                fontWeight: 700,
+                letterSpacing: 0.3,
+                lineHeight: 1.2,
+                fontSize: { sm: '1rem', md: '1.2rem' },
+                display: { xs: 'none', sm: 'block' },
+              }}
+            >
+              Sistema de Apoio — Educação Inclusiva
+            </Typography>
+            <Typography
+              variant="caption"
+              component="div"
+              sx={{
+                opacity: 0.72,
+                letterSpacing: 1.2,
+                textTransform: 'uppercase',
+                fontSize: '0.58rem',
+                display: { xs: 'none', sm: 'block' },
+              }}
+            >
+              Apoio ao Desenvolvimento de Crianças Autistas
+            </Typography>
+          </Box>
         </Box>
 
         {isAuthenticated ? (

@@ -44,8 +44,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     password: string
   ): Promise<{ success: boolean; error?: string }> => {
     try {
-      const response = await authService.login({ email, password });
-      setUser(response.user);
+      await authService.login({ email, password });
+      const savedUser = authService.getCurrentUser();
+      setUser(savedUser);
       return { success: true };
     } catch (error) {
       console.error('Erro ao fazer login:', error);
@@ -67,8 +68,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     password: string
   ): Promise<{ success: boolean; error?: string }> => {
     try {
-      const response = await authService.register({ name, email, password });
-      setUser(response.user);
+      await authService.register({ name, email, password });
       return { success: true };
     } catch (error) {
       console.error('Erro ao cadastrar:', error);
